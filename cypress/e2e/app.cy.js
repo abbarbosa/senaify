@@ -4,13 +4,17 @@ describe('template spec', () => {
     cy.visit('/')
   })
 
+  beforeEach(()=>{
+    cy.viewport("iphone-xr")
+    //cy.visit('http://localhost:8081')
+ })
+
+
   it('passes', () => {
 
     //capturar o elemento tittle e ver se ele está visivel
     cy.get("[aria-label='title-head']").should("be.visible")
     cy.get("[aria-label='title-head']").should("contain", "Good morning")
-    //cy.visit('http://localhost:8081')
-    //cy.viewport("iphone-xr")
   })
 
   it("Verificar se existe itens na listagem das playlists", () => {

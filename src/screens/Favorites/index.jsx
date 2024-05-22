@@ -13,7 +13,7 @@ import { SubTitle } from "../../components/Text/Title/styles";
 import { Container, ContainerBody, ContainerList, ContainerPlaylistData } from "../../components/Container/styles";
 import { ParagraphCenter } from "../../components/Text/Paragraph/styles";
 
-const Favorites = ({ token, atual, audio, setAtual, setAudio }) => {
+const Favorites = ({ token, atual, audio, setAtual, setAudio, label }) => {
   const [lista, setLista] = useState([]);
   // const [atual, setAtual] = useState("");
 
@@ -51,6 +51,7 @@ const Favorites = ({ token, atual, audio, setAtual, setAudio }) => {
             data={ lista }
             renderItem={ ({ item }) => (
               <Music
+              label="favorite-music"
                 play={atual == item.track.preview_url}
                 onPress={() => playSound(item.track.preview_url, atual, setAtual, audio, setAudio)}
 
